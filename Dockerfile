@@ -5,8 +5,6 @@ FROM jenkins/jenkins
 # see: https://docs.docker.com/engine/installation/linux/linux-postinstall/
 # see: https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/
 
-USER root
-
 # prerequisites for docker
 RUN apt-get update \
     && apt-get -y install \
@@ -32,4 +30,3 @@ RUN curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-co
 # give jenkins docker rights
 RUN usermod -aG docker jenkins
 
-USER jenkins
