@@ -25,6 +25,10 @@ RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - \
 # docker
 RUN apt-get -y install docker-ce
 
+# npm
+RUN curl -k -L https://deb.nodesource.com/setup_8.x | bash -  && \
+    apt-get install -y nodejs --no-install-recommends
+
 # docker-compose
 RUN curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose \
     && chmod +x /usr/local/bin/docker-compose
