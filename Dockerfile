@@ -10,6 +10,7 @@ USER root
 # prerequisites for docker
 RUN apt-get update \
   && apt-get -y install \
+  git \
   apt-transport-https \
   ca-certificates \
   curl \
