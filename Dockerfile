@@ -8,8 +8,7 @@ FROM jenkins/jenkins
 USER root
 
 # prerequisites for docker
-RUN apt-get update && apt-get install -y\
-  git \
+RUN apt-get update && apt-get install -y \
   apt-transport-https \
   ca-certificates \
   curl \
@@ -38,6 +37,9 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && \
 # docker-compose
 RUN curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose \
   && chmod +x /usr/local/bin/docker-compose
+
+RUN apt-get install -y git && \
+  git --version
 
 # give jenkins docker rights
 RUN usermod -aG docker jenkins
