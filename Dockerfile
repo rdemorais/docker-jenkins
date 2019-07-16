@@ -8,8 +8,7 @@ FROM jenkins/jenkins
 USER root
 
 # prerequisites for docker
-RUN apt-get update \
-  && apt-get -y install \
+RUN apt-get update && apt-get install -y\
   git \
   apt-transport-https \
   ca-certificates \
